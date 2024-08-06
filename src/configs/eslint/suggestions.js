@@ -85,11 +85,13 @@ export const configEslintSuggestions = {
 		],
 		'max-params': [
 			'warn',
-			4,
+			{
+				max: 4,
+			},
 		],
 		'max-statements': [
 			'warn',
-			25,
+			35,
 		],
 		'new-cap': [
 			'error',

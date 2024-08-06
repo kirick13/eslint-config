@@ -9,8 +9,10 @@ export const configListEslintExceptions = [
 	{
 		files: [ '**/*.ts' ],
 		rules: {
+			'max-params': 'off',
 			'no-dupe-class-members': 'off',
 			'no-invalid-this': 'off',
+			'no-redeclare': 'off',
 			'no-unused-vars': 'off',
 		},
 	},

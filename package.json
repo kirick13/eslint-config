@@ -1,6 +1,6 @@
 {
 	"name": "@kirick/eslint-config",
-	"version": "0.1.11",
+	"version": "0.1.13",
 	"description": "Eslint config for Javascript and Typescript.",
 	"publishConfig": {
 		"access": "public"

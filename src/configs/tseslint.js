@@ -1,5 +1,6 @@
 
-import tseslint from 'typescript-eslint';
+import tseslint                    from 'typescript-eslint';
+import { configEslintSuggestions } from './eslint/suggestions.js';
 
 export const configListTsEslint = [
 	{
@@ -12,6 +13,7 @@ export const configListTsEslint = [
 		},
 		rules: {
 			...tseslint.configs.recommended.rules,
+			'@typescript-eslint/max-params': configEslintSuggestions.rules['max-params'],
 			'@typescript-eslint/no-invalid-this': 'error',
 			'@typescript-eslint/no-unused-vars': [
 				'warn',
