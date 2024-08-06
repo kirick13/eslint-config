@@ -1,0 +1,37 @@
+{
+	"name": "@kirick/eslint-config",
+	"version": "0.1.11",
+	"description": "Eslint config for Javascript and Typescript.",
+	"publishConfig": {
+		"access": "public"
+	},
+	"type": "module",
+	"main": "src/main.js",
+	"dependencies": {
+		"@stylistic/eslint-plugin": "^2.6.1",
+		"eslint-plugin-jsdoc": "^48.11.0",
+		"eslint-plugin-unicorn": "^55.0.0",
+		"globals": "^15.9.0",
+		"typescript-eslint": "^8.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^9.8.0"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kirick13/eslint-config.git"
+	},
+	"keywords": [
+		"eslint",
+		"config"
+	],
+	"author": "Daniil Kirichenko (https://twitter.com/kirickme)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/kirick13/eslint-config/issues"
+	},
+	"homepage": "https://github.com/kirick13/eslint-config#readme"
+}
