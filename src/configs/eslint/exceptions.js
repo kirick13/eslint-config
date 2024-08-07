@@ -1,7 +1,7 @@
 
 export const configListEslintExceptions = [
 	{
-		files: [ 'eslint.config.js' ],
+		files: [ 'eslint.config.{js,mjs,cjs}' ],
 		rules: {
 			'no-restricted-exports': 'off',
 		},
