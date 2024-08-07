@@ -11,6 +11,7 @@ export const configListJsdoc = [
 					definedTags: [ 'import' ],
 				},
 			],
+			'jsdoc/no-undefined-types': 'off',
 			'jsdoc/require-jsdoc': 'error',
 		},
 	},
