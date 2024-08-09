@@ -19,22 +19,22 @@ jobs:
           node-version: 20
       # - run: echo npm test # hehehe
 
-  # publish-npm:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 20
-  #         registry-url: https://registry.npmjs.org/
-  #     - run: echo npm ci # hehehe
-  #     - run: npm publish --provenance --access public
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - run: echo npm ci # hehehe
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   notify:
-    needs: build # TODO
+    needs: publish-npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
           PACKAGE_VERSION=$(jq -r .version package.json)
           TEXT=$(cat << EOF
           📦 Updated package <b><a href="https://www.npmjs.com/package/$PACKAGE_NAME">$PACKAGE_NAME</a></b>
-          New version: <i>${PACKAGE_VERSION}</i>
+          New version: <code>${PACKAGE_VERSION}</code>
 
           https://www.npmjs.com/package/$PACKAGE_NAME/v/$PACKAGE_VERSION
           EOF)
