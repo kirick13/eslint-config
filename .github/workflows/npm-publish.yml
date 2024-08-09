@@ -41,10 +41,12 @@ jobs:
       - run: |
           PACKAGE_NAME=$(jq -r .name package.json)
           PACKAGE_VERSION=$(jq -r .version package.json)
-          TEXT="📦 Updated package <b><a href="https://www.npmjs.com/package/$PACKAGE_NAME">$PACKAGE_NAME</a></b>
+          TEXT=$(cat << EOF
+          📦 Updated package <b><a href="https://www.npmjs.com/package/$PACKAGE_NAME">$PACKAGE_NAME</a></b>
           New version: <i>${PACKAGE_VERSION}</i>
 
-          https://www.npmjs.com/package/$PACKAGE_NAME/v/$PACKAGE_VERSION"
+          https://www.npmjs.com/package/$PACKAGE_NAME/v/$PACKAGE_VERSION
+          EOF)
           BODY=$(jq \
             --null-input \
             --arg chat_id "$TELEGRAM_CHAT_ID" \
