@@ -212,6 +212,7 @@ export const configListStylistic = [
 				{
 					exceptions: {
 						ImportDeclaration: true,
+						Property: false,
 					},
 				},
 			],
@@ -280,8 +281,26 @@ export const configListStylistic = [
 				},
 				{
 					blankLine: 'never',
-					prev: 'case',
+					prev: 'multiline-block-like',
 					next: 'break',
+				},
+				{
+					blankLine: 'never',
+					prev: 'case',
+					next: 'case',
+				},
+				{
+					blankLine: 'never',
+					prev: 'block',
+					next: 'break',
+				},
+				{
+					blankLine: 'always',
+					prev: [
+						'case',
+						'default',
+					],
+					next: '*',
 				},
 			],
 			'@stylistic/quote-props': [

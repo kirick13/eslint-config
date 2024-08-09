@@ -1,7 +1,13 @@
 
 export const configListEslintExceptions = [
 	{
-		files: [ 'eslint.config.{js,mjs,cjs}' ],
+		files: [ 'eslint.config.{,m,c}{js,ts}' ],
+		rules: {
+			'no-restricted-exports': 'off',
+		},
+	},
+	{
+		files: [ '**/hyper-api/**/*.{,m,c}{js,ts}' ],
 		rules: {
 			'no-restricted-exports': 'off',
 		},
@@ -19,7 +25,7 @@ export const configListEslintExceptions = [
 	{
 		files: [
 			'test/',
-			'**/*.test.*',
+			'**/*.test.{,m,c}{js,ts}',
 		],
 		rules: {
 			'max-lines-per-function': 'off',

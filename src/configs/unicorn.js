@@ -5,6 +5,7 @@ export const configListUnicorn = [
 	pluginUnicorn.configs['flat/recommended'],
 	{
 		rules: {
+			'unicorn/no-anonymous-default-export': 'off',
 			'unicorn/no-null': 'off',
 			'unicorn/numeric-separators-style': [
 				'warn',
