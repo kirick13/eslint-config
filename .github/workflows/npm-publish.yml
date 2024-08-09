@@ -6,6 +6,9 @@ name: Node.js Package
 on:
   - push
 
+permissions:
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
