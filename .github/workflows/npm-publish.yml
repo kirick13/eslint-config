@@ -41,15 +41,15 @@ jobs:
       - run: |
           PACKAGE_NAME=$(jq -r .name package.json)
           PACKAGE_VERSION=$(jq -r .version package.json)
-          TEXT="📦 Updated package [*$PACKAGE_NAME*](https://www.npmjs.com/package/$PACKAGE_NAME)
-          New version: _${PACKAGE_VERSION}_
+          TEXT="📦 Updated package <b><a href="https://www.npmjs.com/package/$PACKAGE_NAME">$PACKAGE_NAME</a></b>
+          New version: <i>${PACKAGE_VERSION}</i>
 
           https://www.npmjs.com/package/$PACKAGE_NAME/v/$PACKAGE_VERSION"
           BODY=$(jq \
             --null-input \
             --arg chat_id "$TELEGRAM_CHAT_ID" \
             --arg text "$TEXT" \
-            '{"chat_id":$chat_id,"text":$text,"parse_mode":"markdown","link_preview_options":{"is_disabled":true}}')
+            '{"chat_id":$chat_id,"text":$text,"parse_mode":"html","link_preview_options":{"is_disabled":true}}')
           echo "$BODY"
           curl -X POST \
             -H 'Content-Type: application/json' \
