@@ -6,6 +6,8 @@ export const configListNode = [
 		plugins: {
 			n: pluginNode,
 		},
+	},
+	{
 		rules: {
 			// 'n/callback-return': 'off',
 			'n/exports-style': [
@@ -35,7 +37,12 @@ export const configListNode = [
 			// 'n/no-restricted-require': 'off',
 			'n/no-sync': 'error',
 			'n/no-unpublished-bin': 'error',
-			'n/no-unpublished-import': 'error',
+			'n/no-unpublished-import': [
+				'error',
+				{
+					ignoreTypeImport: true,
+				},
+			],
 			'n/no-unpublished-require': 'error',
 			'n/no-unsupported-features/es-builtins': 'error',
 			'n/no-unsupported-features/es-syntax': 'error',
@@ -62,5 +69,12 @@ export const configListNode = [
 				'never',
 			],
 		},
-	}
+	},
+	{
+		files: [ '**/*.d.ts' ],
+		rules: {
+			'n/no-unpublished-import': 'off',
+			'n/no-unpublished-require': 'off',
+		},
+	},
 ];
