@@ -2,6 +2,7 @@
 import globals                 from 'globals';
 import { configListEslint }    from './configs/eslint.js';
 import { configListJsdoc }     from './configs/jsdoc.js';
+import { configListNode }      from './configs/node.js';
 import { configListStylistic } from './configs/stylistic.js';
 import { configListTsEslint }  from './configs/tseslint.js';
 import { configListUnicorn }   from './configs/unicorn.js';
@@ -19,14 +20,11 @@ export const config = [
 		languageOptions: {
 			ecmaVersion: 2022,
 			sourceType: 'module',
-			globals: {
-				...globals.builtin,
-				...globals.node,
-				// TODO: add custom globals
-			},
+			globals: globals.builtin,
 		},
 	},
 	...configListEslint,
+	...configListNode,
 	...configListUnicorn,
 	...configListJsdoc,
 	...configListStylistic,

@@ -1,0 +1,27 @@
+{
+	"compileOnSave": false,
+	"include": [
+		"src/",
+		"eslint.config.js"
+	],
+	"exclude": [
+		"dist/",
+		"node_modules/"
+	],
+	"compilerOptions": {
+		"outDir": "/dev/null",
+		"noEmit": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": [
+			"ESNext",
+			"ES2021.String"
+		],
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"allowJs": true,
+		"checkJs": true
+	}
+}
