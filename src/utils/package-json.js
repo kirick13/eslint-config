@@ -5,7 +5,6 @@ import fs      from 'node:fs/promises';
 const THIS_MODULE_PATH = libPath.dirname(
 	new URL(import.meta.url).pathname,
 );
-console.error(`THIS_MODULE_PATH: ${THIS_MODULE_PATH}`);
 const THIS_PACKAGE_JSON = JSON.parse(
 	await fs.readFile(
 		libPath.join(
@@ -15,15 +14,12 @@ const THIS_PACKAGE_JSON = JSON.parse(
 		'utf8',
 	),
 );
-console.error('THIS_PACKAGE_JSON:', THIS_PACKAGE_JSON);
 
 // eslint-disable-next-line jsdoc/require-jsdoc
 export async function getProjectPackageJson() {
 	let path = THIS_MODULE_PATH;
 
 	while (true) {
-		console.error(`path: ${path}`);
-
 		const package_json_path = libPath.join(path, 'package.json');
 
 		try {
