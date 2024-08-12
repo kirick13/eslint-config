@@ -35,17 +35,14 @@ export async function getProjectPackageJson() {
 				),
 			);
 
-			if (
-				typeof package_json.devDependencies?.[THIS_PACKAGE_JSON.name] === 'string'
-				|| package_json.name === THIS_PACKAGE_JSON.name // to lint config files
-			) {
+			if (typeof package_json.devDependencies?.[THIS_PACKAGE_JSON.name] === 'string') {
 				return package_json;
 			}
 		}
 		catch {}
 
 		if (path === '/') {
-			throw new Error('Project not found');
+			return THIS_PACKAGE_JSON;
 		}
 
 		path = libPath.dirname(path);
