@@ -3,16 +3,10 @@ import tseslint                    from 'typescript-eslint';
 import { configEslintSuggestions } from './eslint/suggestions.js';
 
 export const configListTsEslint = [
+	...tseslint.configs.recommended,
 	{
 		files: [ '**/*.ts' ],
-		languageOptions: {
-			parser: tseslint.parser,
-		},
-		plugins: {
-			'@typescript-eslint': tseslint.plugin,
-		},
 		rules: {
-			...tseslint.configs.recommended.rules,
 			'@typescript-eslint/max-params': configEslintSuggestions.rules['max-params'],
 			'@typescript-eslint/no-invalid-this': 'error',
 			'@typescript-eslint/no-unused-vars': [
