@@ -3,6 +3,7 @@ import globals                   from 'globals';
 import { configListEslint }      from './configs/eslint.js';
 import { configListJsdoc }       from './configs/jsdoc.js';
 import { configListNode }        from './configs/node.js';
+import { configListPromise }     from './configs/promise.js';
 import { configListStylistic }   from './configs/stylistic.js';
 import { configListTsEslint }    from './configs/tseslint.js';
 import { configListUnicorn }     from './configs/unicorn.js';
@@ -34,6 +35,7 @@ export const config = [
 	...configListNode,
 	...configListUnicorn,
 	...configListJsdoc,
+	...configListPromise,
 	...configListStylistic,
 	...configListTsEslint,
 ];

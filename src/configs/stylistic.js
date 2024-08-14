@@ -10,13 +10,7 @@ export const configListStylistic = [
 	},
 	{
 		rules: {
-			'@stylistic/array-bracket-newline': [
-				'error',
-				{
-					multiline: true,
-					minItems: 4,
-				},
-			],
+			'@stylistic/array-bracket-newline': 'off', // FIXME: impossible to configure properly
 			'@stylistic/array-bracket-spacing': [
 				'error',
 				'always',
@@ -30,7 +24,7 @@ export const configListStylistic = [
 				{
 					consistent: true,
 					multiline: true,
-					minItems: 4,
+					minItems: 3,
 					// ArrayExpression: {
 					// 	consistent: true,
 					// 	multiline: true,
@@ -229,26 +223,29 @@ export const configListStylistic = [
 			'@stylistic/object-curly-newline': [
 				'error',
 				{
-					ObjectExpression: {
-						multiline: true,
-						minProperties: 1,
-						consistent: true,
-					},
-					ObjectPattern: {
-						multiline: true,
-						minProperties: 2,
-						consistent: true,
-					},
-					ImportDeclaration: {
-						multiline: true,
-						minProperties: 2,
-						consistent: true,
-					},
-					ExportDeclaration: {
-						multiline: true,
-						minProperties: 2,
-						consistent: true,
-					},
+					multiline: true,
+					minProperties: 2,
+					consistent: true,
+					// ObjectExpression: {
+					// 	multiline: true,
+					// 	minProperties: 1,
+					// 	consistent: true,
+					// },
+					// ObjectPattern: {
+					// 	multiline: true,
+					// 	minProperties: 2,
+					// 	consistent: true,
+					// },
+					// ImportDeclaration: {
+					// 	multiline: true,
+					// 	minProperties: 2,
+					// 	consistent: true,
+					// },
+					// ExportDeclaration: {
+					// 	multiline: true,
+					// 	minProperties: 2,
+					// 	consistent: true,
+					// },
 				},
 			],
 			'@stylistic/object-curly-spacing': [
