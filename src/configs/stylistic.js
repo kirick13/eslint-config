@@ -406,7 +406,7 @@ export const configListStylistic = [
 			'@stylistic/wrap-regex': 'off',
 			'@stylistic/yield-star-spacing': [
 				'error',
-				'before',
+				'both',
 			],
 		},
 	},
