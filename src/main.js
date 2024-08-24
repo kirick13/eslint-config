@@ -7,6 +7,7 @@ import { configListPromise }     from './configs/promise.js';
 import { configListStylistic }   from './configs/stylistic.js';
 import { configListTsEslint }    from './configs/tseslint.js';
 import { configListUnicorn }     from './configs/unicorn.js';
+import { configListVue }         from './configs/vue.js';
 import { getProjectPackageJson } from './utils/package-json.js';
 
 const PROJECT_PACKAGE_JSON = await getProjectPackageJson();
@@ -14,8 +15,9 @@ const PROJECT_PACKAGE_JSON = await getProjectPackageJson();
 export const config = [
 	{
 		ignores: [
-			'dist/',
 			'node_modules*/',
+			'**/build',
+			'**/dist',
 			'**/*.json',
 		],
 	},
@@ -38,6 +40,7 @@ export const config = [
 	...configListPromise,
 	...configListStylistic,
 	...configListTsEslint,
+	...configListVue,
 ];
 
 // console.log(config);

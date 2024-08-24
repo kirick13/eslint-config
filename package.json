@@ -14,6 +14,7 @@
 		"eslint-plugin-n": "^17.10.2",
 		"eslint-plugin-promise": "^7.1.0",
 		"eslint-plugin-unicorn": "^55.0.0",
+		"eslint-plugin-vue": "^9.27.0",
 		"globals": "^15.9.0",
 		"typescript-eslint": "^8.0.0"
 	},
