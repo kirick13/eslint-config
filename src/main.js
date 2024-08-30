@@ -34,7 +34,9 @@ export const config = [
 		},
 	},
 	...configListEslint,
-	...configListNode,
+	...typeof PROJECT_PACKAGE_JSON.engines?.node === 'string'
+		? configListNode
+		: [],
 	...configListUnicorn,
 	...configListJsdoc,
 	...configListPromise,
