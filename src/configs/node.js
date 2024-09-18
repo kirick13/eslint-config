@@ -61,15 +61,10 @@ export const configListNode = [
 		},
 	},
 	// typescript
-	{
-		files: [ '**/*.ts' ],
-		rules: {
-			'n/file-extension-in-import': [
-				'error',
-				'never',
-			],
-		},
-	},
+	// {
+	// 	files: [ '**/*.ts' ],
+	// 	rules: {},
+	// },
 	{
 		files: [ '**/*.d.ts' ],
 		rules: {

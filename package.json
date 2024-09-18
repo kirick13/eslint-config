@@ -1,6 +1,6 @@
 {
 	"name": "@kirick/eslint-config",
-	"version": "0.1.29",
+	"version": "0.1.30",
 	"description": "Eslint config for Javascript and Typescript.",
 	"publishConfig": {
 		"access": "public"
@@ -20,7 +20,8 @@
 	},
 	"devDependencies": {
 		"@types/node": "^22.2.0",
-		"eslint": "^9.8.0"
+		"eslint": "^9.8.0",
+		"typescript": "5.5.4"
 	},
 	"scripts": {
 		"lint": "eslint . && bunx tsc --noEmit",
